@@ -1,0 +1,23 @@
+Test Case 1 - Normal Input
+Favorite Food: Biryani
+Favorite Color: Blue
+
+Test Case 2 - Different Input
+Favorite Food: Pizza
+Favorite Color: Red
+
+Test Case 3 - Input With Spaces
+Favorite Food:   Fried Rice
+Favorite Color:   Green
+
+Test Case 4 - Empty Input
+Favorite Food: [Empty]
+Expected Result: Program should ask again.
+
+Favorite Color: [Empty]
+Expected Result: Program should ask again.
+
+Test Case 5 - Long Input
+Favorite Food: Chicken Biryani with Extra Spicy Gravy and Onion Raita
+Favorite Color: Dark Blue
+Expected Result: Program should accept and display the input.
