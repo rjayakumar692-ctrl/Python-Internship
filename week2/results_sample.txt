@@ -1,0 +1,31 @@
+================================================================================
+                         RESULTS
+================================================================================
+Name            Average    Grade    Comment
+--------------------------------------------------------------------------------
+Arun            87.67      B        Very Good! You're doing well.
+Priya           75.00      C        Good. Room for improvement.
+Rahul           94.67      A        Excellent! Keep up the great work.
+
+==================================================
+              CLASS STATISTICS
+==================================================
+Class Average : 85.78
+Highest       : 94.67
+Lowest        : 75.00
+
+==================================================
+                SEARCH STUDENT
+==================================================
+Enter a student name to search: Rahul
+
+Student Found!
+----------------------------------------
+Name    : Rahul
+Average : 94.67
+Grade   : A
+Comment : Excellent! Keep up the great work!
+
+============================================================
+Thank you for using the Grade Calculator!
+============================================================
