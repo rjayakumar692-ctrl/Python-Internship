@@ -1,0 +1,16 @@
+﻿__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+.env
+.vscode/
+.idea/
+
+# Local backups and duplicate copies
+github-copy/
+tatus-short-backup.txt
+week3/
+week4/
+week4-backup/
+week4-safe-backup/
