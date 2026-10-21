@@ -1,0 +1,22 @@
+{
+    "23655963466": {
+        "title": "Python Crash Course",
+        "author": "jai",
+        "isbn": "23655963466",
+        "year": 2026,
+        "available": true,
+        "borrowed_by": null,
+        "due_date": null,
+        "date_added": "2026-10-16"
+    },
+    "999999": {
+        "title": "advanced python",
+        "author": "nishanth",
+        "isbn": "999999",
+        "year": 2020,
+        "available": true,
+        "borrowed_by": null,
+        "due_date": null,
+        "date_added": "2026-10-16"
+    }
+}
