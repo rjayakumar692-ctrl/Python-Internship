@@ -1,0 +1,33 @@
+order_id,order_date,customer_id,product_id,product_name,category,quantity,unit_price,total_amount,region
+1001,2024-01-05,C001,P001,Laptop,Electronics,1,850,850,South
+1002,2024-01-12,C002,P002,Headphones,Electronics,2,75,150,North
+1003,2024-01-18,C003,P003,T-Shirt,Clothing,3,25,75,East
+1004,2024-02-03,C004,P004,Office Chair,Home & Garden,1,180,180,West
+1005,2024-02-14,C001,P005,Novel,Books,2,20,40,South
+1006,2024-02-21,C005,P006,Football,Sports,1,35,35,North
+1007,2024-03-02,C006,P001,Laptop,Electronics,2,850,1700,East
+1008,2024-03-15,C002,P007,Jeans,Clothing,2,45,90,West
+1009,2024-03-25,C007,P008,Desk Lamp,Home & Garden,3,30,90,South
+1010,2024-04-04,C008,P009,Programming Book,Books,2,55,110,North
+1011,2024-04-17,C003,P010,Basketball,Sports,2,40,80,East
+1012,2024-04-28,C009,P002,Headphones,Electronics,4,75,300,West
+1013,2024-05-06,C010,P003,T-Shirt,Clothing,5,25,125,South
+1014,2024-05-19,C004,P004,Office Chair,Home & Garden,2,180,360,North
+1015,2024-05-27,C001,P005,Novel,Books,3,20,60,East
+1016,2024-06-08,C005,P006,Football,Sports,2,35,70,West
+1017,2024-06-20,C006,P001,Laptop,Electronics,1,850,850,South
+1018,2024-07-03,C007,P007,Jeans,Clothing,3,45,135,North
+1019,2024-07-15,C008,P008,Desk Lamp,Home & Garden,2,30,60,East
+1020,2024-07-28,C009,P009,Programming Book,Books,4,55,220,West
+1021,2024-08-05,C010,P010,Basketball,Sports,3,40,120,South
+1022,2024-08-18,C002,P002,Headphones,Electronics,2,75,150,North
+1023,2024-09-07,C003,P003,T-Shirt,Clothing,4,25,100,East
+1024,2024-09-19,C004,P004,Office Chair,Home & Garden,1,180,180,West
+1025,2024-10-02,C001,P005,Novel,Books,5,20,100,South
+1026,2024-10-14,C005,P006,Football,Sports,4,35,140,North
+1027,2024-11-03,C006,P001,Laptop,Electronics,2,850,1700,East
+1028,2024-11-16,C007,P007,Jeans,Clothing,4,45,180,West
+1029,2024-11-25,C008,P008,Desk Lamp,Home & Garden,5,30,150,South
+1030,2024-12-05,C009,P009,Programming Book,Books,3,55,165,North
+1031,2024-12-15,C010,P010,Basketball,Sports,4,40,160,East
+1032,2024-12-22,C002,P002,Headphones,Electronics,3,75,225,West
