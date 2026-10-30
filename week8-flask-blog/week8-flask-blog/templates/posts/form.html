@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% from '_macros.html' import render_field %}
+{% block head %}<link rel="stylesheet" href="https://unpkg.com/easymde/dist/easymde.min.css">{% endblock %}
+{% block content %}
+<h1 class="h3 mb-3">{{ heading }}</h1>
+<form method="post" enctype="multipart/form-data" novalidate>
+  {{ form.hidden_tag() }}
+  {{ render_field(form.title) }}
+  <div class="row">
+    <div class="col-md-6">{{ render_field(form.category, placeholder="e.g. Web Development") }}</div>
+    <div class="col-md-6">{{ render_field(form.tags, placeholder="flask, python") }}</div>
+  </div>
+  {{ render_field(form.content) }}
+  {% if post and post.image %}<img src="{{ url_for('static', filename='uploads/' ~ post.image) }}" class="img-thumbnail mb-2" style="max-height:120px" alt="cover">{% endif %}
+  {{ render_field(form.image) }}
+  <div class="form-check mb-3">{{ form.published(class="form-check-input") }} {{ form.published.label(class="form-check-label") }}</div>
+  {{ form.submit(class="btn btn-primary") }}
+  <a class="btn btn-outline-secondary" href="{{ url_for('main.index') }}">Cancel</a>
+</form>
+{% endblock %}
+{% block scripts %}
+<script src="https://unpkg.com/easymde/dist/easymde.min.js"></script>
+<script>new EasyMDE({ element: document.getElementById('content'), spellChecker: false, minHeight: '250px' });</script>
+{% endblock %}

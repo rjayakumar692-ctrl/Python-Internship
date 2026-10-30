@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% from '_macros.html' import post_card, pager %}
+{% block content %}
+<h1 class="h3 mb-3">{{ heading }}</h1>
+{% for post in posts.items %}{{ post_card(post) }}{% else %}<p class="text-muted">No posts here yet.</p>{% endfor %}
+{{ pager(posts, endpoint, **params) }}
+{% endblock %}

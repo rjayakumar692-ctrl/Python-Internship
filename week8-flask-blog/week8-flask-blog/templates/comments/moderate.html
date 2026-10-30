@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% from '_macros.html' import pager, csrf %}
+{% block content %}
+<h1 class="h3 mb-3">Comments awaiting moderation ({{ comments.total }})</h1>
+{% for c in comments.items %}
+<div class="card mb-2"><div class="card-body">
+  <p class="mb-1">{{ c.content }}</p>
+  <small class="text-muted">by {{ c.author.username }} on
+    <a href="{{ url_for('posts.detail', post_id=c.post_id) }}">{{ c.post.title }}</a> &middot; {{ c.timestamp.strftime('%b %d, %Y %H:%M') }}</small>
+  <div class="d-flex gap-2 mt-2">
+    <form method="post" action="{{ url_for('comments.approve', comment_id=c.id) }}">{{ csrf() }}<button class="btn btn-sm btn-success">Approve</button></form>
+    <form method="post" action="{{ url_for('comments.delete', comment_id=c.id) }}" data-confirm="Delete this comment?">{{ csrf() }}<button class="btn btn-sm btn-outline-danger">Delete</button></form>
+  </div>
+</div></div>
+{% else %}<p class="text-muted">Nothing to moderate 🎉</p>{% endfor %}
+{{ pager(comments, 'comments.moderate') }}
+{% endblock %}

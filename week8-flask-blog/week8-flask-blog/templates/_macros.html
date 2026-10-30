@@ -1,0 +1,45 @@
+{% macro render_field(field) %}
+<div class="mb-3">
+  {{ field.label(class="form-label") }}
+  {{ field(class="form-control" ~ (" is-invalid" if field.errors else ""), **kwargs) }}
+  {% for e in field.errors %}<div class="invalid-feedback">{{ e }}</div>{% endfor %}
+</div>
+{% endmacro %}
+
+{% macro pager(pagination, endpoint) %}
+{% if pagination.pages > 1 %}
+<nav aria-label="Pagination"><ul class="pagination justify-content-center">
+  <li class="page-item {{ 'disabled' if not pagination.has_prev }}">
+    <a class="page-link" href="{{ url_for(endpoint, page=pagination.prev_num, **kwargs) if pagination.has_prev else '#' }}">&laquo;</a>
+  </li>
+  {% for p in pagination.iter_pages() %}
+    {% if p %}
+    <li class="page-item {{ 'active' if p == pagination.page }}"><a class="page-link" href="{{ url_for(endpoint, page=p, **kwargs) }}">{{ p }}</a></li>
+    {% else %}<li class="page-item disabled"><span class="page-link">&hellip;</span></li>{% endif %}
+  {% endfor %}
+  <li class="page-item {{ 'disabled' if not pagination.has_next }}">
+    <a class="page-link" href="{{ url_for(endpoint, page=pagination.next_num, **kwargs) if pagination.has_next else '#' }}">&raquo;</a>
+  </li>
+</ul></nav>
+{% endif %}
+{% endmacro %}
+
+{% macro post_card(post) %}
+<article class="card mb-4 shadow-sm">
+  {% if post.image %}<img src="{{ url_for('static', filename='uploads/' ~ post.image) }}" class="card-img-top post-cover" alt="{{ post.title }}">{% endif %}
+  <div class="card-body">
+    <h2 class="h4 card-title"><a href="{{ url_for('posts.detail', post_id=post.id) }}" class="text-decoration-none">{{ post.title }}</a>
+      {% if not post.published %}<span class="badge bg-secondary">Draft</span>{% endif %}</h2>
+    <p class="text-muted small mb-2">
+      {{ post.timestamp.strftime('%B %d, %Y') }} &middot;
+      <a href="{{ url_for('auth.profile', username=post.author.username) }}">{{ post.author.username }}</a>
+      {% if post.category %}&middot; <a href="{{ url_for('posts.category', name=post.category.name) }}">{{ post.category.name }}</a>{% endif %}
+    </p>
+    <p class="card-text">{{ post.content | excerpt }}</p>
+    <a href="{{ url_for('posts.detail', post_id=post.id) }}" class="btn btn-sm btn-outline-primary">Read more</a>
+    <span class="text-muted small ms-2">👁 {{ post.views or 0 }} &middot; 💬 {{ post.approved_comment_count() }}</span>
+  </div>
+</article>
+{% endmacro %}
+
+{% macro csrf() %}<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">{% endmacro %}

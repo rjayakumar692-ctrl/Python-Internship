@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% from '_macros.html' import post_card, pager %}
+{% block content %}
+<div class="card mb-4"><div class="card-body">
+  <h1 class="h3">{{ user.username }} {% if user.is_admin %}<span class="badge bg-primary">Admin</span>{% endif %}</h1>
+  <p class="text-muted mb-1">Member since {{ user.member_since.strftime('%B %d, %Y') }} &middot; Last seen {{ user.last_seen.strftime('%b %d, %Y') }}</p>
+  <p>{{ user.about_me or 'No bio yet.' }}</p>
+  {% if current_user.is_authenticated and current_user.id == user.id %}
+  <a class="btn btn-sm btn-outline-secondary" href="{{ url_for('auth.edit_profile') }}">Edit profile</a>
+  <a class="btn btn-sm btn-primary" href="{{ url_for('posts.create') }}">New post</a>
+  {% endif %}
+</div></div>
+<h2 class="h4">Posts by {{ user.username }}</h2>
+{% for post in posts.items %}{{ post_card(post) }}{% else %}<p class="text-muted">No posts yet.</p>{% endfor %}
+{{ pager(posts, 'auth.profile', username=user.username) }}
+{% endblock %}
